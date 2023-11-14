@@ -1,4 +1,7 @@
-// TODO: Add the required header
+// TODO(jv3ga): Juan Vega
+// jv3ga@csu.fullerton.edu
+// @jv3ga0107
+// Partners: @monica-ss1
 
 #include <iostream>
 #include <string>
@@ -7,19 +10,31 @@
 // Calculate and return the Olympics average of scores.
 // The return value is the average mean of all elements of scores, except for
 // the minimum and maximum elements.
-double JudgeAverage(std::vector<double>& scores) {
-  // TODO: Compute the sum of all elements
+double JudgeAverage(const std::vector<double>& scores) {
+  double min = scores[0];
 
-  // TODO: Compute the minimum and maximum
+  double max = scores[0];
 
-  // TODO: Adjust the sum by eliminating the minimum and maximum
+  double total = 0;
 
-  // TODO: Compute the denominators
+  for (double i = 0; i < scores.size(); i++) {
+    if (scores[i] < min) {
+      min = scores[i];
+    }
+  }
+  for (double i = 0; i < scores.size(); i++) {
+    if (scores[i] > max) {
+      max = scores[i];
+    }
+  }
+  for (double i = 0; i < scores.size(); i++) {
+    total += scores[i];
+  }
+  total -= min;
 
-  // TODO: Compute the average meand and return it
+  total -= max;
 
-  // TODO: Remove the return statement below
-  return 0;
+  return total / (scores.size() - 2);
 }
 
 int main(int argc, char* argv[]) {
