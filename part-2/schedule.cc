@@ -29,7 +29,7 @@ int main(int argc, char const* argv[]) {
   std::cout << "Please enter the schedule of Philosopher 1: ";
   std::cin >> schedule1;
 
-  std::cout << "Please enter the schedule for Philosopher 2: ";
+  std::cout << "Please enter the schedule of Philosopher 2: ";
   std::cin >> schedule2;
 
   bool is_schedule_valid{IsValid(schedule1, schedule2)};
