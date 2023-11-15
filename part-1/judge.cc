@@ -1,4 +1,4 @@
-// TODO(jv3ga): Juan Vega
+// (jv3ga): Juan Vega
 // jv3ga@csu.fullerton.edu
 // @jv3ga0107
 // Partners: @monica-ss1
@@ -17,18 +17,18 @@ double JudgeAverage(const std::vector<double>& scores) {
 
   double total = 0;
 
-  for (double i = 0; i < scores.size(); i++) {
-    if (scores[i] < min) {
-      min = scores[i];
+  for (double score : scores) {
+    if (score < min) {
+      min = score;
     }
   }
-  for (double i = 0; i < scores.size(); i++) {
-    if (scores[i] > max) {
-      max = scores[i];
+  for (double score : scores) {
+    if (score > max) {
+      max = score;
     }
   }
-  for (double i = 0; i < scores.size(); i++) {
-    total += scores[i];
+  for (double score : scores) {
+    total += score;
   }
   total -= min;
 
