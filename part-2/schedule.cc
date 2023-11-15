@@ -1,4 +1,7 @@
-// TODO: Add the required header
+// Juan Vega
+// jv3ga@csu.fullerton.edu
+// @jv3ga0107
+// Partners: @monica-ss1
 
 #include <iostream>
 #include <string>
@@ -7,39 +10,34 @@
 // if the strings do not contain an 'e' at the same index
 // and false if the strings contain an 'e' at the same index.
 bool IsValid(const std::string& schedule1, const std::string& schedule2) {
-  // TODO: Declare a local variable of type Bool and initialize it with true
+  bool is_valid = true;
 
-  // TODO: Consider a loop to examine each character at index i in
-  // both strings; if both strings have 'e' at the same index,
-  // then change the Bool variable to false
-  // Since the two strings may have different length, compare them
-  // index by index until one of them is finished
+  for (size_t i = 0; i < schedule1.length() && i < schedule2.length(); i++) {
+    if (schedule1[i] == 'e' && schedule2[i] == 'e') {
+      is_valid = false;
+      break;
+    }
+  }
 
-  // TODO: Return the local variable
-
-  // TODO: Remove the return statement below
-
-  return false;
+  return is_valid;
 }
 
 int main(int argc, char const* argv[]) {
-  // TODO: Declare a variable to hold the first schedule
+  std::string schedule1;
+  std::string schedule2;
 
-  // TODO: print the prompt "Please enter the schedule of the Philosopher 1: "
-  // and request for input a number from standard input into the variable.
+  std::cout << "Please enter the schedule of Philosopher 1: ";
+  std::cin >> schedule1;
 
-  // TODO: Declare a variable to hold the first schedule
+  std::cout << "Please enter the schedule for Philosopher 2: ";
+  std::cin >> schedule2;
 
-  // TODO: Print the prompt "Schedule of Philosopher 2: "
-  // and request for input a number from standard input into the variable.
+  bool is_schedule_valid{IsValid(schedule1, schedule2)};
 
-  // TODO: Declare a Boolean variable
-
-  // TODO: Assign to the Boolean variable the value returned from
-  // a call to the IsValid function above.
-
-  // TODO If the variable above is true, print out "Valid schedule",
-  // else print out "Invalid schedule"
-  // then a newline character.
+  if (is_schedule_valid) {
+    std::cout << "Valid schedule\n";
+  } else {
+    std::cout << "Invalid schedule\n";
+  }
   return 0;
 }
